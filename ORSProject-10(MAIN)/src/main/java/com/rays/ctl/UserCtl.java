@@ -162,7 +162,7 @@ public class UserCtl extends BaseCtl<UserForm, UserDTO, UserServiceInt> {
 		Long imageId = attachmentService.save(attachmentDto, userContext);
 
 		if (userDto.getImageId() == null) {
-
+			
 			userDto.setImageId(imageId);
 
 			userService.update(userDto, userContext);

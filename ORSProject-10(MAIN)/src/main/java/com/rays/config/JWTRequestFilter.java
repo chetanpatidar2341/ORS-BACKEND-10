@@ -87,14 +87,9 @@ public class JWTRequestFilter extends OncePerRequestFilter {
 
 			} catch (Exception e) {
 				e.printStackTrace();
-//				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//				response.getWriter().write(e.getMessage());
-
 				resolver.resolveException(request, response, null, e);
 				return;
-			} /*
-				 * finally { UserContextHolder.clear(); }
-				 */
+			}
 		}
 		filterChain.doFilter(request, response);
 
