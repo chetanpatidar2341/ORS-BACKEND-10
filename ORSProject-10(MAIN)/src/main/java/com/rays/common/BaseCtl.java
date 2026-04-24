@@ -135,7 +135,7 @@ public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServic
 				baseService.add(dto, userContext);
 				res.addData(dto.getId());
 				res.addMessage(dto.getTableName() + " added successfully..!!");
-				res.setSuccess(false);
+				res.setSuccess(true);
 			}
 		} catch (Exception e) {
 			res.setSuccess(false);
