@@ -75,5 +75,15 @@ public class AccessLogDTO extends BaseDTO {
 	public String getTableName() {
 		return "Access Log";
 	}
+	
+	@Override
+	public String getKey() {
+		return username;
+	}
+	
+	@Override
+	public String getValue() {
+		return username;
+	}
 
 }
