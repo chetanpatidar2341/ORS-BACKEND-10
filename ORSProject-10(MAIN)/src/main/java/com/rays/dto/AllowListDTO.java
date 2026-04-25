@@ -14,7 +14,7 @@ public class AllowListDTO extends BaseDTO {
 	private String allowCode;
 
 	@Column(name = "username")
-	private String username;
+	private String username; 
 
 	@Column(name = "source")
 	private String source;

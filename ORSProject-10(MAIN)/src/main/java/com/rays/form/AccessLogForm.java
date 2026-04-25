@@ -2,6 +2,7 @@ package com.rays.form;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -12,33 +13,32 @@ import com.rays.dto.AccessLogDTO;
 
 public class AccessLogForm extends BaseForm {
 
-	@NotEmpty(message = "accessReferenceId is required")
-	private String accessReferenceId;
+	@NotEmpty(message = "Accesslog Code is required")
+	private String accesslogCode;
 
-	@NotEmpty(message = "accessType is required")
-	private String accessType;
+	@NotEmpty(message = "Username is required")
+	private String username;
 
-	@NotNull(message = "accessTime is required")
-	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+	@NotNull(message = "Access Time is required")
 	private LocalDateTime accessTime;
 
-	@NotEmpty(message = "accessStatus is required")
-	private String accessStatus;
+	@NotEmpty(message = "Status is required")
+	private String status;
 
-	public String getAccessReferenceId() {
-		return accessReferenceId;
+	public String getAccesslogCode() {
+		return accesslogCode;
 	}
 
-	public void setAccessReferenceId(String accessReferenceId) {
-		this.accessReferenceId = accessReferenceId;
+	public void setAccesslogCode(String accesslogCode) {
+		this.accesslogCode = accesslogCode;
 	}
 
-	public String getAccessType() {
-		return accessType;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setAccessType(String accessType) {
-		this.accessType = accessType;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public LocalDateTime getAccessTime() {
@@ -49,23 +49,24 @@ public class AccessLogForm extends BaseForm {
 		this.accessTime = accessTime;
 	}
 
-	public String getAccessStatus() {
-		return accessStatus;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setAccessStatus(String accessStatus) {
-		this.accessStatus = accessStatus;
+	public void setStatus(String status) {
+		this.status = status;
 	}
-	
+
 	@Override
 	public BaseDTO getDto() {
-		AccessLogDTO dto=initDTO(new AccessLogDTO());
-		dto.setAccessReferenceId(accessReferenceId);
-		dto.setAccessType(accessType);
+		AccessLogDTO dto = initDTO(new AccessLogDTO());
+
+		dto.setAccesslogCode(accesslogCode);
+		dto.setUsername(username);
 		dto.setAccessTime(accessTime);
-		dto.setAccessStatus(accessStatus);
+		dto.setStatus(status);
 		return dto;
-		
+
 	}
 
 }

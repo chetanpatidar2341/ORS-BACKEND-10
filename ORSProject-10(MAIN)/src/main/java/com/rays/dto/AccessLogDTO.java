@@ -1,9 +1,5 @@
 package com.rays.dto;
 
-
-
-
-
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -16,53 +12,32 @@ import com.rays.common.BaseDTO;
 @Table(name = "st_accesslog")
 public class AccessLogDTO extends BaseDTO {
 
-	
-	@Column(name = "AccessReferenceId")
-	private String accessReferenceId;
-	
-	@Column(name = "AccessType")
-	private String accessType;
-	
-	@Column(name = "AccessTime")
+	@Column(name = "accesslog_code")
+	private String accesslogCode;
+
+	@Column(name = "username")
+	private String username;
+
+	@Column(name = "access_time")
 	private LocalDateTime accessTime;
-	
-	@Column(name = "AccessStatus")
-	private String accessStatus;
 
-	@Override
-	public String getUniqueKey() {
-		return"accessReferenceId";
+	@Column(name = "status")
+	private String status;
+
+	public String getAccesslogCode() {
+		return accesslogCode;
 	}
 
-	@Override
-	public String getUniqueValue() {
-		return accessReferenceId;
+	public void setAccesslogCode(String accesslogCode) {
+		this.accesslogCode = accesslogCode;
 	}
 
-	@Override
-	public String getLabel() {
-		return "accessReference Id";
+	public String getUsername() {
+		return username;
 	}
 
-	@Override
-	public String getTableName() {
-		return "Accesslog";
-	}
-
-	public String getAccessReferenceId() {
-		return accessReferenceId;
-	}
-
-	public void setAccessReferenceId(String accessReferenceId) {
-		this.accessReferenceId = accessReferenceId;
-	}
-
-	public String getAccessType() {
-		return accessType;
-	}
-
-	public void setAccessType(String accessType) {
-		this.accessType = accessType;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public LocalDateTime getAccessTime() {
@@ -73,17 +48,32 @@ public class AccessLogDTO extends BaseDTO {
 		this.accessTime = accessTime;
 	}
 
-	public String getAccessStatus() {
-		return accessStatus;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setAccessStatus(String accessStatus) {
-		this.accessStatus = accessStatus;
+	public void setStatus(String status) {
+		this.status = status;
 	}
-	
-	
-	
-	
-	
-	
+
+	@Override
+	public String getUniqueKey() {
+		return "accesslogCode";
+	}
+
+	@Override
+	public String getUniqueValue() {
+		return accesslogCode;
+	}
+
+	@Override
+	public String getLabel() {
+		return "Access Log Code";
+	}
+
+	@Override
+	public String getTableName() {
+		return "Access Log";
+	}
+
 }

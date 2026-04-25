@@ -10,6 +10,6 @@ import com.rays.service.AllowListServiceInt;
 
 @RestController
 @RequestMapping(value = "AllowList")
-public class AllowListCtl extends BaseCtl<AllowListForm, AllowListDTO, AllowListServiceInt> {
+public class AllowListCtl extends BaseCtl<AllowListForm, AllowListDTO, AllowListServiceInt> { 
 
 }
