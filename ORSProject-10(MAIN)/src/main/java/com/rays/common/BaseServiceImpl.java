@@ -42,6 +42,17 @@ public class BaseServiceImpl<T extends BaseDTO, D extends BaseDAOInt<T>> impleme
 		return pk;
 	}
 
+//	@Transactional(readOnly = false)
+//	public long add(T dto, UserContext userContext) {
+//		long pk = baseDao.add(dto, userContext);
+//
+//		if (true) {
+//			throw new RuntimeException();
+//		}
+//
+//		return pk;
+//	}
+
 	/**
 	 * Updates an existing record.
 	 * 
