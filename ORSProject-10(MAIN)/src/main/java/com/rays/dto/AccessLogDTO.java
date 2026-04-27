@@ -78,12 +78,12 @@ public class AccessLogDTO extends BaseDTO {
 	
 	@Override
 	public String getKey() {
-		return username;
+		return status;
 	}
 	
 	@Override
 	public String getValue() {
-		return username;
+		return status;
 	}
 
 }
