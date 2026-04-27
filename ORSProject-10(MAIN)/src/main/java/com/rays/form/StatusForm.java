@@ -22,6 +22,7 @@ public class StatusForm extends BaseForm{
 	@Override
 	public BaseDTO getDto() {
 		StatusDTO dto = initDTO(new StatusDTO());
+		dto.setStatus(status);
 		return dto;
 	}
 }

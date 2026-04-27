@@ -44,8 +44,4 @@ public class StatusDTO extends BaseDTO {
 		return status;
 	}
 
-	@Override
-	public String getKey() {
-		return status;
-	}
 }
